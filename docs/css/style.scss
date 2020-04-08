@@ -206,6 +206,7 @@ header {
   writing-mode: vertical-rl;
   position: absolute;
   top: -(220/1280)*100vw;
+  left: 0;
   z-index: 2;
 
   @media (max-width: $breakpoint) {
@@ -627,6 +628,7 @@ header {
         &:first-child {
           margin-top: (182/1280)*100vw;
           width: 51%;
+          height: (313/1280)*100vw;
         }
 
         &:last-child {

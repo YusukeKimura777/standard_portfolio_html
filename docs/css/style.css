@@ -183,6 +183,7 @@ header strong {
   writing-mode: vertical-rl;
   position: absolute;
   top: -17.1875vw;
+  left: 0;
   z-index: 2;
 }
 
@@ -574,6 +575,7 @@ header strong {
 .other-contents-coffee img:first-child {
   margin-top: 14.21875vw;
   width: 51%;
+  height: 24.45312vw;
 }
 
 .other-contents-coffee img:last-child {
