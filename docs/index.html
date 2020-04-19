@@ -241,31 +241,37 @@
         centerPadding: "0"
       }); 
 
-      // video autoplay config
-      const videoId = "hLSDiEblYio";
-      const videoPlayDivId = "auto-play-video";
-
-      const scriptElm = document.createElement("script");
-      scriptElm.src = "https://www.youtube.com/iframe_api";
-      const headElm = document.querySelector("head");
-      headElm.appendChild(scriptElm);
-
+      // video autoplay config      	
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      
+      var player;
       function onYouTubeIframeAPIReady() {
-        const player = new YT.Player(videoPlayDivId, {
-          playerlets : {
-            playlist : videoId,
-            autoplay : 1,
+        player = new YT.Player('auto-play-video', {
+          videoId: 'hLSDiEblYio',
+          playerVars: {
+            playsinline: 1
           },
           events: {
-            "onReady": onPlayerReady
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
           }
         });
       }
-
+      
+        
       function onPlayerReady(event) {
-        const player = event.target
-        player.mute();
-        player.playVideo();
+        event.target.mute();
+        event.target.playVideo();
+      }
+
+        
+      function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.ENDED) {
+          event.target.playVideo();
+        }
       }
     </script>
   </body>
