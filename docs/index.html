@@ -5,35 +5,34 @@
     <title>standard-portfolio</title>
     <meta name="description" content="ポートフォリオ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.min.css">
-    <!-- aos -->
+    <!-- aos css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- slick -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <!-- slick css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- jQuery Core 3.4.1 -->
+    <script  src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- aos jQuery -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- slick jQuery -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
-    <div class="heading big-bg">
+    <div class="home">
       <header>
         <strong>LOGO</strong>
       </header>
-
-      <section class="wrapper-1 home">
-        <div class="home-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/hLSDiEblYio" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
   
-        <h1>
-          Polite &<br>
-          Nice code
-        </h1>
-      </section>
+      <div class="home-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hLSDiEblYio" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <h1 class="wrapper-1">
+        Polite &amp;<br>
+        Nice code
+      </h1>
     </div>
 
     <article class="wrapper-2 greeting" data-aos="fade-in" data-aos-duration="1500">
@@ -51,7 +50,7 @@
     <article class="skill" data-aos="fade-in" data-aos-duration="1500">
       <h2 data-aos="fade-in" data-aos-duration="1500">Skills</h2>
 
-      <section class="skill-coding" data-aos="fade-in" data-aos-duration="1500">
+      <div class="skill-coding" data-aos="fade-in" data-aos-duration="1500">
         <div class="greenbox-coding"></div>
         <p class="portfolio">Portfolio</p>
 
@@ -66,9 +65,9 @@
             </figcaption>
           </figure>
         </section>
-      </section>
+      </div>
 
-      <section class="skill-designpage" data-aos="fade-in" data-aos-duration="1500">
+      <div class="skill-designpage" data-aos="fade-in" data-aos-duration="1500">
         <div class="greenbox-designpage"></div>
 
         <section class="wrapper-1 skill-designpage-content">
@@ -82,13 +81,13 @@
             </figcaption>
           </figure>
         </section>
-      </section>
+      </div>
     </article>
 
-    <article class="works" data-aos="fade-in" data-aos-duration="1500">
+    <article class="wrapper-1 works" data-aos="fade-in" data-aos-duration="1500">
       <h2 data-aos="fade-in" data-aos-duration="1500">Works</h2>
 
-      <section class="wrapper-1 works-contents">
+      <div class="works-contents">
         <ul>
           <li class="works-content" data-aos="fade-in" data-aos-duration="1500">
             <figure>
@@ -124,7 +123,7 @@
             </figure>
           </li>
         </ul>
-      </section>
+      </div>
 
       <aside class="wrapper-3 works-aside" data-aos="fade-in" data-aos-duration="1500">
         <h3>プロジェクトに対する心がけ</h3>
@@ -140,8 +139,8 @@
         他にもいっぱい発信してます<span class="number-other">1</span><span class="unit">件</span>
       </h2>
 
-      <section class="other-contents">
-        <section class="other-contents-main" data-aos="fade-in" data-aos-duration="1500">
+      <div class="other-contents">
+        <div class="other-contents-main" data-aos="fade-in" data-aos-duration="1500">
           <figure class="other-contents-main-detail">
             <img src="img/markus-spiske-HRXGTBn9b7Y-unsplash@2x.jpg" alt="カメラ">
             <figcaption>
@@ -159,7 +158,7 @@
               <img src="img/markus-spiske-jjtdL443L4w-unsplash@2x.jpg" alt="方眼紙">
             </figure>
           </div>
-        </section>
+        </div>
   
         <section class="wrapper-1 other-contents-coffee" data-aos="fade-in" data-aos-duration="1500">
           <figure>
@@ -174,7 +173,7 @@
             いっぱい発信しているぞいっぱい発信しているぞいっぱい発信しているぞいっぱい発信しているぞいっぱい発信しているぞいっぱい発信しているぞいっぱい
           </p>
         </section>
-      </section>
+      </div>
     </article>
 
     <article class="wrapper-3 history" data-aos="fade-in" data-aos-duration="1500">
@@ -226,12 +225,14 @@
     </article>
 
     <footer data-aos="fade-in" data-aos-duration="1500">
+      <p>yusuke.kimura</p>
     </footer>
 
     <script>
       AOS.init();
 
       $('.myvalue-fig').slick({
+        arrows: false,
         autoplay:true,
         variableWidth: true,
         centerMode: true,

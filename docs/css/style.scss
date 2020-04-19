@@ -37,17 +37,17 @@ img {
 
 .wrapper {
   &-1 {
-    max-width: (1026/1280)*100%;
+    max-width: (1026/1280)*100vw;
     margin: 0 auto;
   }
 
   &-2 {
-    max-width: (720/1280)*100%;
+    max-width: (720/1280)*100vw;
     margin: 0 auto;
   }
 
   &-3 {
-    max-width: (816/1280)*100%;
+    max-width: (816/1280)*100vw;
     margin: 0 auto;
   }
 
@@ -75,11 +75,6 @@ img {
   }
 }
 
-.heading {
-  background-image: url(../img/devin-edwards-JmmXKlJ8MKQ-unsplash@2x.jpg);
-  min-height: 100vh;
-}
-
 header {
   padding: 36px 0 0 36px;
 
@@ -90,12 +85,15 @@ header {
 }
 
 .home {
+  min-height: 100vh;
+  position: relative;
+  
   &-video {
-    width: (560/1280)*100vw;
-    height: (315/1280)*100vw;
-    min-width: 500px;
-    min-height: 282px;
-    margin: 50px auto 0 auto;
+    width: 100%;
+    height: calc(514px + ((1vw - 6px) * 9.411));
+    position: absolute;
+    top: 0;
+    z-index: -1;
 
     iframe {
       width: 100%;
@@ -106,22 +104,18 @@ header {
   h1 {
     color: $green;
     font-size: calc(90px + ((1vw - 6px) * 5.588));
-    line-height: calc(110px + ((1vw - 6px) * 5.882));
-    margin: 50px 0 0 0;
+    line-height: 1.2;
+    margin-top: calc(350px + ((1vw - 6px) * 4.412));
   }
 
   @media (max-width: $breakpoint) {
     &-video {
-      width: auto;
-      height: (200/375)*100vw;
-      min-width: 0;
-      min-height: 0;
+      height: 450px;
     }
 
     h1 {
       font-size: 5.2rem;
-      line-height: 80px;
-      margin-top: 70px;
+      margin-top: 335px;
     }
   }
 }
@@ -202,7 +196,7 @@ header {
   display: inline-block;
   color: $white;
   font-size: 30.0rem;
-  line-height: 18.0rem;
+  line-height: 0.6;
   writing-mode: vertical-rl;
   position: absolute;
   top: -(220/1280)*100vw;
@@ -211,7 +205,6 @@ header {
 
   @media (max-width: $breakpoint) {
     font-size: 20.0rem;
-    line-height: 12.0rem;
   }
 }
 
@@ -268,17 +261,29 @@ header {
   margin-top: (300/1280)*100vw;
   padding-top: (162/1280)*100vw;
   padding-bottom: (239/1280)*100vw;
+  text-align: center;
 
   h2 {
     font-size: 6.4rem;
-    text-align: center;
-    text-shadow: 2px -2px 0 $white, 3px -3px 0 $green;
     margin: 0;
+    position: relative;
+    display: inline-block;
+
+    &:after {
+      content: 'Skills';
+      color: $lightgray;
+      -webkit-text-stroke: 1px $green;
+      position: absolute;
+      bottom: 3px;
+      left: 3px;
+      z-index: -1;
+    }
   }
 
   &-coding {
     margin-top: (116/1280)*100vw;
     padding-top: (90/1280)*100vw;
+    text-align: left;
     position: relative;
 
     &-content {
@@ -313,6 +318,7 @@ header {
   &-designpage {
     margin-top: (244/1280)*100vw;
     padding-top: (90/1280)*100vw;
+    text-align: left;
     position: relative;
 
     &-content {
@@ -405,11 +411,24 @@ header {
 .works {
   padding-top: (212/1280)*100vw;
   padding-bottom: (97/1280)*100vw;
+  text-align: center;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: $darkgray;
+    position: absolute;
+    top: 0;
+    left: calc(-9% + (12px + ((1vw - 6px) * 0.882))*1.5);
+  }
 
   h2 {
     font-size: 6.4rem;
-    text-align: center;
-    text-shadow: 2px -2px 0 $white, 3px -3px 0 $green;
+    position: relative;
+    display: inline-block;
     margin: 0;
 
     &:before {
@@ -421,10 +440,21 @@ header {
       font-size: 2.0rem;
       margin-bottom: 34px;
     }
+
+    &:after {
+      content: 'Works';
+      color: $white;
+      -webkit-text-stroke: 1px $green;
+      position: absolute;
+      bottom: 3px;
+      left: 3px;
+      z-index: -1;
+    }
   }
 
   &-contents {
     margin-top: (92/1280)*100vw;
+    text-align: left;
 
     ul {
       margin: 0;
@@ -439,6 +469,7 @@ header {
 
     &:before {
       content: "";
+      background: $white;
       width: calc(12px + ((1vw - 6px) * 0.882));
       height: calc(12px + ((1vw - 6px) * 0.882));
       border: calc(12px + ((1vw - 6px) * 0.882)) solid $green;
@@ -487,6 +518,7 @@ header {
 
   &-aside {
     margin-top: (114/1280)*100vw;
+    text-align: left;
 
     h3 {
       font-size: 3.2rem;
@@ -501,6 +533,10 @@ header {
   }
 
   @media (max-width: $breakpoint) {
+    &:before {
+      content: none;
+    }
+
     h2 {
       font-size: 4.8rem;
 
@@ -725,17 +761,29 @@ header {
 .history {
   padding-top: (274/1280)*100vw;
   padding-bottom: (128/1280)*100vw;
+  text-align: center;
 
   h2 {
     font-size: 6.4rem;
-    text-align: center;
-    text-shadow: 2px -2px 0 $white, 3px -3px 0 $green;
+    display: inline-block;
+    position: relative;
     margin: 0;
+
+    &:after {
+      content: 'History';
+      color: $white;
+      -webkit-text-stroke: 1px $green;
+      position: absolute;
+      bottom: 3px;
+      left: 3px;
+      z-index: -1;
+    }
   }
 
   table {
     margin-top: (116/1280)*100vw;
     font-size: 1.6rem;
+    text-align: left;
   }
 
   tr {
@@ -859,8 +907,19 @@ header {
 footer {
   background: $green;
   height: 346px;
+  padding-top: (300/1280)*100vw;
+
+  p {
+    margin: 0;
+    font-size: 1.4rem;
+    text-align: center;
+  }
 
   @media (max-width: $breakpoint) {
     height: 200px;
+
+    p {
+      font-size: 1.2rem;
+    }
   }
 }
